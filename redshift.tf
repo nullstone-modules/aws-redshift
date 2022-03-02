@@ -3,7 +3,7 @@ resource "aws_redshift_cluster" "this" {
   cluster_identifier        = local.resource_name
   port                      = local.port
   publicly_accessible       = var.enable_public_access
-  cluster_subnet_group_name = aws_db_subnet_group.this.name
+  cluster_subnet_group_name = aws_redshift_subnet_group.this.name
   vpc_security_group_ids    = [aws_security_group.this.id]
   master_username           = replace(data.ns_workspace.this.block_ref, "-", "_")
   master_password           = random_password.this.result
@@ -19,7 +19,7 @@ locals {
   cluster_type = var.node_count > 1 ? "multi-node" : "single-node"
 }
 
-resource "aws_db_subnet_group" "this" {
+resource "aws_redshift_subnet_group" "this" {
   name        = local.resource_name
   description = "Db subnet group for Redshift cluster"
   subnet_ids  = var.enable_public_access ? local.public_subnet_ids : local.private_subnet_ids
