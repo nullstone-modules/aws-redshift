@@ -1,5 +1,5 @@
 output "db_arn" {
-  value = aws_redshift_cluster.this.arn
+  value       = aws_redshift_cluster.this.arn
   description = "string ||| The ARN of the created Redshift Cluster"
 }
 
