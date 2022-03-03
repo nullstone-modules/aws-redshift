@@ -2,8 +2,8 @@
 
 resource "random_password" "this" {
   // Master password length constraints differ for each database engine. For more information, see the available settings when creating each DB instance.
-  length  = 16
-  special = true
+  length      = 16
+  special     = true
   min_numeric = 1
 
   // The password for the master database user can include any printable ASCII character except /, ", @, or a space.

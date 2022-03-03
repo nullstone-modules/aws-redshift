@@ -5,6 +5,7 @@ resource "aws_redshift_cluster" "this" {
   publicly_accessible       = var.enable_public_access
   cluster_subnet_group_name = aws_redshift_subnet_group.this.name
   vpc_security_group_ids    = [aws_security_group.this.id]
+  database_name             = var.database_name
   master_username           = replace(data.ns_workspace.this.block_ref, "-", "_")
   master_password           = random_password.this.result
   node_type                 = var.instance_class

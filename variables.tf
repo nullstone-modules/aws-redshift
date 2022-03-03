@@ -28,6 +28,12 @@ If you want to access your database from outside the vpc, enable this option.
 EOF
 }
 
+variable "database_name" {
+  type = string
+  default = "redshift"
+  description = "The name of the default database to create"
+}
+
 locals {
   port = 5439
 }
