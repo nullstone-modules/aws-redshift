@@ -19,6 +19,16 @@ variable "node_count" {
   description = "The number of nodes in your cluster"
 }
 
+variable "enforce_ssl" {
+  type = bool
+  default = false
+  description = <<EOF
+By default, the redshift cluster will have SSL enabled.
+This toggle will require an SSL connection.
+This is highly recommended if you have public access enabled.
+EOF
+}
+
 variable "enable_public_access" {
   type        = bool
   default     = false

@@ -23,6 +23,7 @@ data "ns_connection" "network" {
 }
 
 locals {
+  env_name           = data.ns_workspace.this.env_name
   tags               = data.ns_workspace.this.tags
   block_name         = data.ns_workspace.this.block_name
   resource_name      = "${data.ns_workspace.this.block_ref}-${random_string.resource_suffix.result}"
