@@ -20,8 +20,8 @@ variable "node_count" {
 }
 
 variable "enforce_ssl" {
-  type = bool
-  default = false
+  type        = bool
+  default     = false
   description = <<EOF
 By default, the redshift cluster will have SSL enabled.
 This toggle will require an SSL connection.
@@ -39,8 +39,8 @@ EOF
 }
 
 variable "database_name" {
-  type = string
-  default = "redshift"
+  type        = string
+  default     = "redshift"
   description = "The name of the default database to create"
 }
 
