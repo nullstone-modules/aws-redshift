@@ -3,9 +3,11 @@ name: aws-redshift
 friendly_name: Redshift Data Warehouse
 description: Produces a standard, best-practice Amazon Redshift data warehouse in AWS
 category: datastore
-type: redshift/aws
-appCategories: []
-layer: database
-is_public: true
+subcategory: ""
 provider_types:
     - aws
+platform: redshift
+subplatform: ""
+type: redshift/aws
+appCategories: []
+is_public: true
